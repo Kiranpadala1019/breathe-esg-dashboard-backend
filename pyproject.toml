@@ -1,0 +1,5 @@
+
+framework = "django"
+
+
+wsgi = "breathe.wsgi.application"
