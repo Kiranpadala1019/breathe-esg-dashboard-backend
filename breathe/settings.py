@@ -1,6 +1,7 @@
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import shutil
 
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,20 +50,36 @@ TEMPLATES = [{
     ]},
 }]
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# --- VERCEL SQLITE COMPATIBILITY FIX ---
+if os.environ.get('VERCEL'):
+    # Force the SQLite DB into Vercel's only writable environment route
+    writable_db = '/tmp/db.sqlite3'
+    fallback_repo_db = BASE_DIR / 'db.sqlite3'
+    
+    # If the seed database exists from the git upload, copy it to the writable path
+    if os.path.exists(fallback_repo_db) and not os.path.exists(writable_db):
+        shutil.copy2(fallback_repo_db, writable_db)
+        
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': writable_db,
+        }
     }
-}
-# For production, switch to:
-# DATABASES = {
-#   'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
-# }
+else:
+    # Keeps your local PC development setup working completely unchanged
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Changed from CompressedManifestStaticFilesStorage to prevent the 500 runtime crash
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny'],

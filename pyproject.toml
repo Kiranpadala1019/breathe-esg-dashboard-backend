@@ -9,4 +9,5 @@ dependencies = [
     "pandas",
     "dj-database-url",
     "whitenoise",
+    "python-dotenv"
 ]
