@@ -1,0 +1,66 @@
+```gitignore
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.env/
+ENV/
+env/
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# Environment Variables
+.env
+.env.local
+.env.production
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Build / Distribution
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Migrations cache
+**/__pycache__/
+
+# Node (if frontend files exist nearby)
+node_modules/
+
+# Vercel
+.vercel/
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+```

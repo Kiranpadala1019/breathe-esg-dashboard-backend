@@ -1,0 +1,5 @@
+meter_id,service_address,billing_period_start,billing_period_end,consumption_kwh,unit,tariff_code,amount_currency,currency
+MTR-BLR-001,Bangalore Office Block A,2024-01-01,2024-01-31,24500,kWh,LT-COMM-2,187250,INR
+MTR-BLR-002,Bangalore Office Block B,2024-01-01,2024-01-31,18200,kWh,LT-COMM-2,139230,INR
+MTR-DEL-001,Delhi Data Centre,2023-12-15,2024-01-16,95000,kWh,HT-COMM-6,712500,INR
+MTR-MUM-001,Mumbai Warehouse,2024-01-01,2024-01-31,8750,kWh,LT-IND-3,66500,INR

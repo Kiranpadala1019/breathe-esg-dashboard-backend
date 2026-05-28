@@ -1,0 +1,7 @@
+report_id,employee_id,expense_type,transaction_date,merchant_name,from_airport,to_airport,hotel_nights,hotel_city,distance_km,distance_unit,amount,currency
+RPT-001,EMP-042,Airfare,2024-01-10,IndiGo Airlines,DEL,BLR,,,,,8500,INR
+RPT-002,EMP-042,Hotel,2024-01-10,,,,2,Bangalore,,,,6200,INR
+RPT-003,EMP-017,Airfare,2024-01-12,Air India,BOM,LHR,,,,,42000,INR
+RPT-004,EMP-017,Hotel,2024-01-13,,,,3,London,,,,18500,INR
+RPT-005,EMP-033,Car Rental,2024-01-14,Zoomcar,,,,,,85,km,3200,INR
+RPT-006,EMP-008,Airfare,2024-01-15,Vistara,DEL,SFO,,,,,58000,INR
