@@ -1,7 +1,5 @@
 
 [tool.vercel]
 framework = "django"
-
-[tool.vercel.django]
-wsgi = "breathe.wsgi.application"
+entrypoint = "breathe.wsgi:application"
 
