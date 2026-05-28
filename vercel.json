@@ -5,7 +5,8 @@
       "src": "breathe/wsgi.py",
       "use": "@vercel/python",
       "config": {
-        "runtime": "python3.11"
+        "useRequirementsTxt": true,
+        "runtime": "python3.12"
       }
     }
   ],
@@ -16,4 +17,3 @@
     }
   ]
 }
-

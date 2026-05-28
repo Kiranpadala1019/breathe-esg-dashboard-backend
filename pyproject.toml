@@ -1,0 +1,12 @@
+[project]
+name = "breathe-esg-dashboard-backend"
+version = "0.1.0"
+description = "Breathe ESG Data Ingestion API"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=4.2",
+    "djangorestframework",
+    "pandas",
+    "dj-database-url",
+    "whitenoise",
+]
